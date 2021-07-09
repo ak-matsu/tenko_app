@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <title>おみくじ</title>
-  <link rel="stylesheet" href="app/assets/stylesheets/styles.css">
-</head>
-  <body>
-    <div id= "btn">?</div>
+<%= form_with url: "/posts", method: :post, local: true do |form| %>
 
-    <script src= "app/javascript/main.js"></script>
-
-    
-    
-  </body>
-</html>
+  <%= form.submit '出席' %>
+<% end %>
