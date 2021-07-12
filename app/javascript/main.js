@@ -4,13 +4,26 @@ function check() {
 
   btn.addEventListener('click', () => {
     const n = Math.random();
-    if (n < 0.05) {
-      btn.textContent = "大吉"; //5%
-    }else if (n < 0.2){
-      btn.textContent = '中吉'; //15%
+
+    clearClass(btn)
+
+    if (n < 0.25) {
+      btn.textContent = '大吉';
+      btn.classList.add('daikiti');
+
+    }else if (n < 0.50){
+      btn.textContent = '中吉';
+      btn.classList.add('chukiti');
+
     }else{
-      btn.textContent = '凶'; //80%
+      btn.textContent = '凶';
+      btn.classList.add('kyo');
+
     }
   });
 }
   window.addEventListener("load", check);
+
+  function clearClass(element) {
+    element.classList.remove(...element.classList)
+  }
